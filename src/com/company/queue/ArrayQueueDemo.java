@@ -1,4 +1,4 @@
-package com.company;
+package com.company.queue;
 
 //使用模拟数组模拟队列 - 编写一个ArrayQueue类
 class ArrayQueue {
