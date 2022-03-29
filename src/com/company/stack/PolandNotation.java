@@ -12,7 +12,7 @@ public class PolandNotation {
         //3 遇到操作数，入栈s2
         //4 遇到运算符时，比较其与s1栈顶运算符的优先级
         //  4.1如果s1为空，或者栈顶运算符为左括号，直接将运算符入栈
-        //  4.2否则，若优先级逼栈顶运算符的高，也将运算符压入s1
+        //  4.2否则，若优先级比栈顶运算符的高，也将运算符压入s1
         //  4.3否则，将s1栈顶的运算符弹出并压入到s2中，再次转到4。1与s1中新的栈顶运算符相比较
         //5遇到括号时
         //  5.1如果是左括号，入栈s1
@@ -26,9 +26,9 @@ public class PolandNotation {
         //[1, +, (, (, 2, +, 3, ), *, 4, ), -, 5] =》 [1,2,3,+,4,*,5,-]
         String expression = "1+((2+3)*4)-5";
         List<String> infixExpressiontoList = toInfixExpressionList(expression);
-        System.out.println("中缀表达式 = "+infixExpressiontoList); //[1, +, (, (, 2, +, 3, ), *, 4, ), -, 5]
-        List<String> parseSuffixExpressionList =  parseSuffixExpressionList(infixExpressiontoList);
-        System.out.println("后缀表达式 = "+parseSuffixExpressionList);
+        System.out.println("中缀表达式 = " + infixExpressiontoList); //[1, +, (, (, 2, +, 3, ), *, 4, ), -, 5]
+        List<String> parseSuffixExpressionList = parseSuffixExpressionList(infixExpressiontoList);
+        System.out.println("后缀表达式 = " + parseSuffixExpressionList);
         System.out.println("expression = " + calculate(parseSuffixExpressionList));
 
 
@@ -108,12 +108,12 @@ public class PolandNotation {
             }
         }
         //将s1中剩余的运算符依次弹出并加入s2
-        while(s1.size() != 0){
+        while (s1.size() != 0) {
             s2.add(s1.pop());
-    }
+        }
         return s2; //因为是存放到List，因此按顺序输出就是对应的后缀表达式对应的List
 
-}
+    }
 
 
     //完成对逆波兰表达式的运算
@@ -163,24 +163,26 @@ public class PolandNotation {
 
 
 //编写一个类Operation,可以返回一个运算符对应的优先级
-class Operation{
+class Operation {
     private static int ADD = 1;
     private static int SUB = 1;
     private static int MUL = 2;
     private static int DIV = 2;
 
     //写一个方法，返回对应的优先级数字
-    public static int getValue(String operation){
+    public static int getValue(String operation) {
         int result = 0;
-        switch(operation){
+        switch (operation) {
             case "+":
                 result = ADD;
                 break;
             case "-":
                 result = SUB;
-                break;case "*":
+                break;
+            case "*":
                 result = MUL;
-                break;case "/":
+                break;
+            case "/":
                 result = DIV;
                 break;
             default:
