@@ -24,9 +24,7 @@ public class SelectSort {
                 arr[minIndex] = arr[i];
                 arr[i] = min;
             }
-            //将最小值，放在arr[0]即交换
-            arr[minIndex] = arr[i];
-            arr[i] = min;
+
             System.out.println("第"+(i+1) +"轮后");
             System.out.println(Arrays.toString(arr));
         }
