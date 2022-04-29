@@ -189,6 +189,7 @@ public class SingleLinkedListDemo {
         singleLinkedList.add(node2);
         singleLinkedList.add(node3);
         singleLinkedList.add(node4);
+        singleLinkedList.delete(4);
         singleLinkedList.list();
         System.out.println();
         //按照编号顺序添加
