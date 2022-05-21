@@ -1,5 +1,6 @@
 package com.company.hashtab;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class HashTabDemo {
