@@ -61,6 +61,33 @@ class BinaryTree {
             System.out.println("二叉树为空，无法遍历");
         }
     }
+
+    //前序遍历
+    public HeroNode preOrderSearch(int no) {
+        if (root != null) {
+            return root.preOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+
+    //中序遍历
+    public HeroNode infixOrderSearch(int no) {
+        if (root != null) {
+            return root.infixOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
+
+    //后序遍历
+    public HeroNode postOrderSearch(int no) {
+        if (root != null) {
+            return root.postOrderSearch(no);
+        } else {
+            return null;
+        }
+    }
 }
 
 class HeroNode {
@@ -146,5 +173,62 @@ class HeroNode {
             this.right.postOrder();
         }
         System.out.println(this);
+    }
+
+    //前序遍历查找
+    public HeroNode preOrderSearch(int no) {
+        if (this.no == no) {
+            return this;
+        }
+        HeroNode resNode = null;
+        if (this.left != null) {
+            resNode = this.left.preOrderSearch(no);
+        }
+        if (resNode != null) { //说明左子树找到
+            return resNode;
+        }
+        if (this.right != null) {
+            resNode = this.right.preOrderSearch(no);
+        }
+        return resNode;
+    }
+
+    //中序遍历查找
+    public HeroNode infixOrderSearch(int no) {
+        HeroNode resNode = null;
+        if (this.left != null) {
+            resNode = this.left.infixOrderSearch(no);
+        }
+        if (resNode != null) {
+            return resNode;
+        }
+        if (this.no == no) {
+            return this;
+        }
+        if (this.right != null) {
+            resNode = this.right.infixOrderSearch(no);
+        }
+        return resNode;
+    }
+
+    //后序遍历查找
+    public HeroNode postOrderSearch(int no) {
+        HeroNode resNode = null;
+        if (this.left != null) {
+            resNode = this.left.postOrderSearch(no);
+        }
+        if (resNode != null) {
+            return resNode;
+        }
+        if (this.right != null) {
+            resNode = this.right.postOrderSearch(no);
+        }
+        if (resNode != null) {
+            return resNode;
+        }
+        if (this.no == no) {
+            return this;
+        }
+        return resNode;
     }
 }
