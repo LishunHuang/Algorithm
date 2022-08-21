@@ -1,6 +1,4 @@
-package algorithm.dac;
-
-import java.sql.SQLOutput;
+package com.algorithm.dac;
 
 public class Hanoitower {
     public static void main(String[] args) {

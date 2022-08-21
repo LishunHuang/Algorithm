@@ -1,4 +1,4 @@
-package algorithm.binarySearchNoRecur;
+package com.algorithm.binarySearchNoRecur;
 
 public class BinarySearchNoRecur {
     public static void main(String[] args) {
